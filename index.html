@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Split</title>
+</head>
+<body>
+<form>
+    Player A:<br>
+    <input type="text" id="playerA"><br>
+    Player B:<br>
+    <input type="text" id="playerB"><br>
+    Player C:<br>
+    <input type="text" id="playerC">
+</form>
+
+<button id="myBtn">Split</button>
+
+<p id="responseA"></p>
+<p id="responseB"></p>
+<p id="responseC"></p>
+
+<p id="average"></p>
+
+<p id="differenceA"></p>
+<p id="differenceB"></p>
+<p id="differenceC"></p>
+
+
+<script>
+  document.getElementById("myBtn").addEventListener("click", function() {
+    var playerA = parseInt(document.getElementById("playerA").value);
+    document.getElementById("responseA").innerHTML = playerA;
+
+    var playerB = parseInt(document.getElementById("playerB").value);
+    document.getElementById("responseB").innerHTML = playerB;
+
+    var playerC = parseInt(document.getElementById("playerC").value);
+    document.getElementById("responseC").innerHTML = playerC;
+
+    var average = (playerA + playerB + playerC) / 3;
+    document.getElementById("average").innerHTML = `Average is ${average}`;
+
+    var differenceA = (average - playerA);
+    document.getElementById("differenceA").innerHTML = differenceA;
+
+    var differenceB = (average - playerB);
+    document.getElementById("differenceB").innerHTML = differenceB;
+
+    var differenceC = (average - playerC);
+    document.getElementById("differenceC").innerHTML = differenceC;
+
+    var amounts = [];
+    if (differenceA < 0) {
+        amounts.push("a")
+    } if (differenceB < 0) {
+        amounts.push("b")
+    } if (differenceC < 0) {
+        amounts.push("c")
+    };
+    console.log(amounts)
+});  
+</script>
+</body>
+</html>
