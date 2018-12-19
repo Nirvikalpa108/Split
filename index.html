@@ -49,15 +49,35 @@
     var differenceC = (average - playerC);
     document.getElementById("differenceC").innerHTML = differenceC;
 
-    var amounts = [];
-    if (differenceA < 0) {
-        amounts.push("a")
-    } if (differenceB < 0) {
-        amounts.push("b")
-    } if (differenceC < 0) {
-        amounts.push("c")
+    //this empty array fills with players who should GIVE money and prints this to the console
+    var givers = [];
+    if (differenceA > 0) {
+        givers.push("a")
+    } if (differenceB > 0) {
+        givers.push("b")
+    } if (differenceC > 0) {
+        givers.push("c")
     };
-    console.log(amounts)
+    console.log(givers)
+
+    //this empty array fills with players who should RECEIVE money and prints this to the console
+    var receivers = [];
+    if (differenceA < 0) {
+        receivers.push("a")
+    } if (differenceB < 0) {
+        receivers.push("b")
+    } if (differenceC < 0) {
+        receivers.push("c")
+    };
+    console.log(receivers)
+
+/*allocation calculation:
+LOOP
+calculate giver amount - receiver amount, until 
+giver amount = 0
+print to the browser the giver's name(s) and amount given to which receiver(s)
+*/
+    
 });  
 </script>
 </body>
