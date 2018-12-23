@@ -37,9 +37,11 @@
     var playerC = parseInt(document.getElementById("playerC").value);
     document.getElementById("responseC").innerHTML = playerC;
 
-    var average = (playerA + playerB + playerC) / 3;
+    //calculates the average
+    var average = ((playerA + playerB + playerC) / 3).toFixed(2);
     document.getElementById("average").innerHTML = `Average is ${average}`;
 
+//calculates the difference each player is from the average
     var differenceA = (average - playerA);
     document.getElementById("differenceA").innerHTML = differenceA;
 
