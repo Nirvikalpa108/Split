@@ -37,18 +37,18 @@
     var playerC = parseInt(document.getElementById("playerC").value);
     document.getElementById("responseC").innerHTML = playerC;
 
-    //calculates the average
+    //calculates the average to 2 decimal places
     var average = ((playerA + playerB + playerC) / 3).toFixed(2);
     document.getElementById("average").innerHTML = `Average is ${average}`;
 
-//calculates the difference each player is from the average
-    var differenceA = (average - playerA);
+//calculates the difference each player is from the average to 2 decimal places
+    var differenceA = (average - playerA).toFixed(2);
     document.getElementById("differenceA").innerHTML = differenceA;
 
-    var differenceB = (average - playerB);
+    var differenceB = (average - playerB).toFixed(2);
     document.getElementById("differenceB").innerHTML = differenceB;
 
-    var differenceC = (average - playerC);
+    var differenceC = (average - playerC).toFixed(2);
     document.getElementById("differenceC").innerHTML = differenceC;
 
     //this empty array fills with players who should GIVE money and prints this to the console
